@@ -1,5 +1,5 @@
 # Ignored folders
-/venv_sales
+venv_sales/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
