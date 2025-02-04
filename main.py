@@ -22,23 +22,34 @@ plt.figure(figsize=(14,8))
 grouped_heatmap_data = barplot_filtered.groupby(['Genre']).mean().sort_values(by='Global_Sales', ascending=False).reset_index()
 
 
+# First Chart
+sns.set_style('whitegrid')
 sns.barplot(data=grouped_heatmap_data, x='Genre', y='Global_Sales')
-plt.xticks(rotation=70)
+plt.xticks(rotation=60)
+plt.title('Average Sales in Millions by Genre 1980-2020')
+plt.xlabel('Genre')
+plt.ylabel('Sales in Mn')
 plt.show()
 
 
 # Filter the data
 temp_data = sales_data[['Genre', 'Global_Sales']].groupby(['Genre']).sum()
 sorted_temp_data = temp_data.sort_values(by='Global_Sales', ascending=False).reset_index()
+print(sorted_temp_data.head(10))
 
 
 # Set the width and height of the figure
 plt.figure(figsize=(14,8))
 
+
+# Second Chart
 sns.set_style('whitegrid')
 sns.barplot(data=sorted_temp_data, x='Genre', y='Global_Sales')
 plt.xticks(rotation=60)
+plt.title('Total Sales in Millions by Genre 1980-2020')
+plt.xlabel('Genre')
+plt.ylabel('Sales in Mn')
 plt.show()
 
 
-# Add title and labels
+# Create new charts
